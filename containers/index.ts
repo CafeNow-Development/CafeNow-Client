@@ -1,1 +1,1 @@
-export { };
+export { default as StartContainer } from "./StartContainer";
