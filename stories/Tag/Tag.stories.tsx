@@ -4,7 +4,7 @@ import React from "react";
 import { Tag } from "./Tag";
 
 export default {
-  title: "Tag",
+  title: "CafeNow/Tag",
   component: Tag,
   argTypes: {
     backgroundColor: { control: "color" },
@@ -14,4 +14,3 @@ export default {
 const Template: ComponentStory<typeof Tag> = args => <Tag {...args} />;
 
 export const DefaultTag = Template.bind({});
-//aa
