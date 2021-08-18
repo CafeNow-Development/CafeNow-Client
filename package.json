@@ -29,8 +29,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "next start",
     "build": "next build",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "sb": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=9d614a709832"
   },
   "author": "",
   "license": "ISC"
