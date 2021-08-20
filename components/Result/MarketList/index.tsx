@@ -9,6 +9,7 @@ enum Business {
 }
 
 interface CafeItemProps {
+  storeId: number;
   cafeName: string;
   isBusiness: Business;
   cafeWeekendHour: string;
@@ -25,7 +26,7 @@ const BusinessState = {
   setting: "오픈 준비 중",
 };
 
-const MarketItem: React.FC<CafeItemProps> = ({ cafeName, isBusiness, cafeWeekendHour, review }) => {
+const MarketItem: React.FC<CafeItemProps> = ({ storeId, cafeName, isBusiness, cafeWeekendHour, review }) => {
   return (
     <S.MarketItemWrapper>
       <S.CafeNameText>{cafeName}</S.CafeNameText>
@@ -47,7 +48,7 @@ const MarketList: React.FC<CafeListProps> = ({ cafeList }) => {
         <S.MarketListResultCountText>총 {cafeList.length}건</S.MarketListResultCountText>
       </S.MarketListTitleWrapper>
       {cafeList.map(cafe => (
-        <MarketItem {...cafe} />
+        <MarketItem key={cafe.storeId} {...cafe} />
       ))}
     </S.MarketListWrapper>
   );

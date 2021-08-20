@@ -11,6 +11,7 @@ enum Business {
 }
 
 interface CafeItemProps {
+  storeId: number;
   cafeName: string;
   isBusiness: Business;
   cafeWeekendHour: string;
