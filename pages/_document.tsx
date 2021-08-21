@@ -28,9 +28,12 @@ class MyDocument extends Document {
   }
 
   render() {
+    const apikey = "fd25a486ac9201171b8071bc93f39edd";
     return (
       <Html>
-        <Head />
+        <Head>
+          <script type="text/javascript" src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${apikey}&libraries=services`}></script>
+        </Head>
         <title>카페나우</title>
         <body>
           <Main />
