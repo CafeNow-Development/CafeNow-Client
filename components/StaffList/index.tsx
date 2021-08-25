@@ -11,7 +11,7 @@ interface StaffItemProps {
   staffName: string;
 }
 
-const StaffItem: React.FC<StaffItemProps> = ({ staffId, staffName }) => {
+const StaffItem: React.FC<StaffItemProps> = ({ staffName }) => {
   return (
     <S.StaffItemWrapper>
       <S.StaffItemCircle>
