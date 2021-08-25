@@ -14,13 +14,18 @@ interface MenuItemProps {
   menuImage: string;
 }
 
+interface ReviewItemProps {
+  reviewStar: number;
+  reviewContent: string;
+}
 interface OrderProps {
   nav: string;
   setNav: (nav: string) => void;
   menuList: MenuItemProps[];
+  reviewList: ReviewItemProps[];
 }
 
-const Order: React.FC<OrderProps> = ({ menuList, nav, setNav }) => {
+const Order: React.FC<OrderProps> = ({ menuList, reviewList, nav, setNav }) => {
   return (
     <S.Positioner>
       <ImageSlider />
@@ -38,7 +43,7 @@ const Order: React.FC<OrderProps> = ({ menuList, nav, setNav }) => {
           <S.NavItemWrapper onClick={() => setNav("menu")}>메뉴</S.NavItemWrapper>
           <S.NavItemWrapper onClick={() => setNav("review")}>리뷰</S.NavItemWrapper>
         </S.NavWrapper>
-        {nav === "menu" ? <MenuList menuList={menuList} /> : <ReviewList />}
+        {nav === "menu" ? <MenuList menuList={menuList} /> : <ReviewList reviewList={reviewList} />}
       </S.Wrapper>
     </S.Positioner>
   );

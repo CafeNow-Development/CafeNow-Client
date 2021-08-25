@@ -18,7 +18,7 @@ const OrderContainer: React.FC = () => {
     { reviewStar: 4.5, reviewContent: "사장님이 친절하세요^^" },
     { reviewStar: 4.5, reviewContent: "사장님이 친절하세요^^" },
   ];
-  return <Order menuList={Menus} nav={nav} setNav={setNav} />;
+  return <Order menuList={Menus} nav={nav} setNav={setNav} reviewList={Reviews} />;
 };
 
 export default OrderContainer;
