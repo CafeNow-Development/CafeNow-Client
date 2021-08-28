@@ -21,11 +21,12 @@ interface ReviewItemProps {
 interface OrderProps {
   nav: string;
   setNav: (nav: string) => void;
+  reviewAvg: number;
   menuList: MenuItemProps[];
   reviewList: ReviewItemProps[];
 }
 
-const Order: React.FC<OrderProps> = ({ menuList, reviewList, nav, setNav }) => {
+const Order: React.FC<OrderProps> = ({ menuList, reviewList, nav, setNav, reviewAvg }) => {
   return (
     <S.Positioner>
       <ImageSlider />
@@ -36,7 +37,7 @@ const Order: React.FC<OrderProps> = ({ menuList, reviewList, nav, setNav }) => {
             {[1, 1, 1, 1, 0].map(v => (
               <I.Star width={27} height={27} fill={v ? "#FFD29B" : "#C4C4C4"} />
             ))}
-            <S.StarText>4점</S.StarText>
+            <S.StarText>{reviewAvg}점</S.StarText>
           </S.StarWrapper>
         </S.OrderCafeInfoWrapper>
         <S.NavWrapper nav={nav}>

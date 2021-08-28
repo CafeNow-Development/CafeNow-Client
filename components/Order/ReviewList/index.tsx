@@ -41,7 +41,7 @@ const ReviewList: React.FC<ReviewListProps> = ({ reviewList }) => {
           <S.ReviewAvgText>4.0</S.ReviewAvgText>
           <S.StarWrapper>
             {[1, 1, 1, 1, 0].map((v, i) => (
-              <I.Star width={10} height={10} fill={v ? "#FFD29B" : "#C4C4C4"} />
+              <I.Star key={i} width={10} height={10} fill={v ? "#FFD29B" : "#C4C4C4"} />
             ))}
           </S.StarWrapper>
         </S.ReviewAvgWrapper>
@@ -56,7 +56,7 @@ const ReviewList: React.FC<ReviewListProps> = ({ reviewList }) => {
         </S.ReviewGraphWrapper>
       </S.ReviewInfoWrapper>
       <S.ReviewListWrapper>
-        <ReviewListTitleText>리뷰 20개</ReviewListTitleText>
+        <ReviewListTitleText>리뷰 {reviewList.length}개</ReviewListTitleText>
         {reviewList.map(item => (
           <ReviewItem {...item} key={item.reviewContent} />
         ))}
