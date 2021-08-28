@@ -44,7 +44,6 @@ export const StarWrapper = styled.div`
 export const StarText = styled.span`
     font-weight: 600;
     font-size: 18px;
-    line-height: 21px;
 
     color: #FFD29B;
 `;
