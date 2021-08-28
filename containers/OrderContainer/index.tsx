@@ -4,6 +4,7 @@ import { Order } from "../../components";
 
 const OrderContainer: React.FC = () => {
   const [nav, setNav] = useState<string>("menu");
+  const starCount = [0, 0, 0, 0, 0];
   const CafeImages = ["https://www.jeongdong.or.kr/static/portal/img/HKPU_04_04_pic3.jpg", "https://www.jeongdong.or.kr/static/portal/img/HKPU_04_04_pic3.jpg", "https://www.jeongdong.or.kr/static/portal/img/HKPU_04_04_pic3.jpg", "https://www.jeongdong.or.kr/static/portal/img/HKPU_04_04_pic3.jpg"];
   const Menus = [
     { menuId: 1, menuName: "나이트로 바닐라 크림", menuPrice: 5600, menuImage: "" },
@@ -20,8 +21,8 @@ const OrderContainer: React.FC = () => {
     { reviewStar: 5, reviewContent: "사장님이 친절하세요^^" },
   ];
   const reviewAvg = Reviews.map(v => v.reviewStar).reduce((a, c) => a + c) / Reviews.length;
-
-  return <Order menuList={Menus} nav={nav} setNav={setNav} reviewList={Reviews} reviewAvg={reviewAvg} />;
+  Reviews.map(v => starCount[v.reviewStar - 1]++);
+  return <Order menuList={Menus} nav={nav} setNav={setNav} reviewList={Reviews} reviewAvg={reviewAvg} reviewStarCount={starCount} />;
 };
 
 export default OrderContainer;
