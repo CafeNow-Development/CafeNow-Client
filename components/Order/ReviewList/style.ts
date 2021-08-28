@@ -90,5 +90,47 @@ export const ReviewItemWrapper = styled.div`
     display : flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+
+    margin: 5px 0;
+`;
+
+export const ReviewItemProfileCircle = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #FFD29B;
+
+    padding: 15px;
+    border-radius: 100%;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 15px;
+
+    color: #FFFFFF;
+`;
+
+export const ReviewItemInfoWrapper = styled.div`
+    display : flex;
+    flex-direction: column;
+    margin-left : 10px;
+`;
+
+export const ReviewItemStarWrapper = styled.div`
+    display: flex;
+
+    & > * {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+`;
+
+export const ReviewInfoText = styled.div`
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 14px;
+
+    color: #000000;
 `;
