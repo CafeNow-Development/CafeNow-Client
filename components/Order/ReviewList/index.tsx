@@ -3,8 +3,8 @@ import React from "react";
 import * as S from "./style";
 
 import * as I from "../../../assets";
-import { ReviewListTitleText } from "../../StoreDetail/ReviewList/style";
 
+import { ReviewListTitleText } from "../../StoreDetail/ReviewList/style";
 interface ReviewListProps {
   reviewList: ReviewItemProps[];
 }
@@ -17,7 +17,18 @@ interface ReviewItemProps {
 const ReviewItem: React.FC<ReviewItemProps> = ({ reviewStar, reviewContent }) => {
   return (
     <S.ReviewItemWrapper>
-      <div></div>
+      <S.ReviewItemProfileCircle>
+        <span>카페</span>
+        <span>나우</span>
+      </S.ReviewItemProfileCircle>
+      <S.ReviewItemInfoWrapper>
+        <S.ReviewItemStarWrapper>
+          {[0, 0, 0, 0, 0].map((v, i) => (
+            <I.Star key={i} width={25} height={25} fill={i + 1 <= reviewStar ? "#FFD29B" : "#C4C4C4"} />
+          ))}
+        </S.ReviewItemStarWrapper>
+        <S.ReviewInfoText>{reviewContent}</S.ReviewInfoText>
+      </S.ReviewItemInfoWrapper>
     </S.ReviewItemWrapper>
   );
 };
