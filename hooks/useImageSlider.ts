@@ -1,6 +1,8 @@
-import React, { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 
-const useImageSlider = (imageList) => {
+type ReturnType = [number, () => void, () => void]
+
+const useImageSlider = (imageList : string[]): ReturnType => {
     const [imageNumber, setImageNumber] = useState<number>(0);
 
     const nextImage = useCallback(() => {
