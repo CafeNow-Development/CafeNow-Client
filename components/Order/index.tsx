@@ -27,13 +27,14 @@ interface OrderProps {
   reviewStarCount: number[];
   imageNumber: number;
   cafeImageList: string[];
-  setImageNumber: (number) => void;
+  nextImage: () => void;
+  prevImage: () => void;
 }
 
-const Order: React.FC<OrderProps> = ({ menuList, reviewList, nav, setNav, reviewAvg, reviewStarCount, imageNumber, cafeImageList, setImageNumber }) => {
+const Order: React.FC<OrderProps> = ({ menuList, reviewList, nav, setNav, reviewAvg, reviewStarCount, imageNumber, cafeImageList, nextImage, prevImage }) => {
   return (
     <S.Positioner>
-      <ImageSlider imageNumber={imageNumber} cafeImageList={cafeImageList} setImageNumber={setImageNumber} />
+      <ImageSlider imageNumber={imageNumber} cafeImageList={cafeImageList} nextImage={nextImage} prevImage={prevImage} />
       <S.Wrapper>
         <S.OrderCafeInfoWrapper>
           <S.CafeNameText>스타벅스 광산 수완점</S.CafeNameText>
