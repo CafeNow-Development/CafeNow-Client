@@ -9,7 +9,7 @@ import CafeHour from "./CafeHour";
 import StoreContent from "./StoreContent";
 import CafeLocation from "./CafeLocation";
 import StaffList from "../StaffList";
-import ReviewList from "../ReviewList";
+import ReviewList from "./ReviewList";
 
 enum Business {
   open = "open",

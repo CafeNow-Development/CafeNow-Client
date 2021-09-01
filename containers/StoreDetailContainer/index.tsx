@@ -17,9 +17,9 @@ const StoreDetailContainer: React.FC = () => {
     cafeWeekendHour: "09:00 ~ 22:00",
     cafeWeekdayHour: "09:00 ~ 22:00",
     staffList: [
-      { staffid: 1, staffName: "김철수" },
-      { staffid: 2, staffName: "김상현" },
-      { staffid: 3, staffName: "김영희" },
+      { staffId: 1, staffName: "김철수" },
+      { staffId: 2, staffName: "김상현" },
+      { staffId: 3, staffName: "김영희" },
     ],
     review: [
       { reviewStar: 4, reviewContent: "사장님이 친절하세요^^" },
