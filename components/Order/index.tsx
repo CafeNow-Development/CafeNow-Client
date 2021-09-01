@@ -25,12 +25,15 @@ interface OrderProps {
   menuList: MenuItemProps[];
   reviewList: ReviewItemProps[];
   reviewStarCount: number[];
+  imageNumber: number;
+  cafeImageList: string[];
+  setImageNumber: (number) => void;
 }
 
-const Order: React.FC<OrderProps> = ({ menuList, reviewList, nav, setNav, reviewAvg, reviewStarCount }) => {
+const Order: React.FC<OrderProps> = ({ menuList, reviewList, nav, setNav, reviewAvg, reviewStarCount, imageNumber, cafeImageList, setImageNumber }) => {
   return (
     <S.Positioner>
-      <ImageSlider />
+      <ImageSlider imageNumber={imageNumber} cafeImageList={cafeImageList} setImageNumber={setImageNumber} />
       <S.Wrapper>
         <S.OrderCafeInfoWrapper>
           <S.CafeNameText>스타벅스 광산 수완점</S.CafeNameText>
@@ -45,7 +48,7 @@ const Order: React.FC<OrderProps> = ({ menuList, reviewList, nav, setNav, review
           <S.NavItemWrapper onClick={() => setNav("menu")}>메뉴</S.NavItemWrapper>
           <S.NavItemWrapper onClick={() => setNav("review")}>리뷰</S.NavItemWrapper>
         </S.NavWrapper>
-        {nav === "menu" ? <MenuList menuList={menuList} /> : <ReviewList reviewList={reviewList} reviewStarCount={reviewStarCount} />}
+        {nav === "menu" ? <MenuList menuList={menuList} /> : <ReviewList reviewList={reviewList} reviewStarCount={reviewStarCount} reviewAvg={reviewAvg} />}
       </S.Wrapper>
     </S.Positioner>
   );

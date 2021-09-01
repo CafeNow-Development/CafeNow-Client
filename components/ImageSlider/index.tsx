@@ -2,12 +2,18 @@ import React from "react";
 
 import * as S from "./style";
 
-interface ImageSliderProps {}
+interface ImageSliderProps {
+  imageNumber: number;
+  cafeImageList: string[];
+  nextImage: () => void;
+  prevImage: () => void;
+}
 
-const ImageSlider: React.FC<ImageSliderProps> = () => {
+const ImageSlider: React.FC<ImageSliderProps> = ({ imageNumber, cafeImageList, nextImage, prevImage }) => {
   return (
-    <S.ImageSliderWrapper>
-      <div>ImageSlider</div>
+    <S.ImageSliderWrapper imageItem={cafeImageList[imageNumber]}>
+      <S.SliderBtn onClick={prevImage}>{"<"}</S.SliderBtn>
+      <S.SliderBtn onClick={nextImage}>{">"}</S.SliderBtn>
     </S.ImageSliderWrapper>
   );
 };
