@@ -8,6 +8,7 @@ import { ReviewListTitleText } from "../../StoreDetail/ReviewList/style";
 interface ReviewListProps {
   reviewList: ReviewItemProps[];
   reviewStarCount: number[];
+  reviewAvg: number;
 }
 
 interface ReviewItemProps {
@@ -34,12 +35,12 @@ const ReviewItem: React.FC<ReviewItemProps> = ({ reviewStar, reviewContent }) =>
   );
 };
 
-const ReviewList: React.FC<ReviewListProps> = ({ reviewList, reviewStarCount }) => {
+const ReviewList: React.FC<ReviewListProps> = ({ reviewList, reviewStarCount, reviewAvg }) => {
   return (
     <S.ReviewWrapper>
       <S.ReviewInfoWrapper>
         <S.ReviewAvgWrapper>
-          <S.ReviewAvgText>4.0</S.ReviewAvgText>
+          <S.ReviewAvgText>{reviewAvg}</S.ReviewAvgText>
           <S.StarWrapper>
             {[1, 1, 1, 1, 0].map((v, i) => (
               <I.Star key={i} width={10} height={10} fill={v ? "#FFD29B" : "#C4C4C4"} />
