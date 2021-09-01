@@ -28,6 +28,7 @@ export const OrderCafeInfoWrapper = styled.div`
 `;
 
 export const CafeNameText = styled.h2`
+    text-align: center;
     font-weight: 600;
     font-size: 18px;
     line-height: 21px;
@@ -42,6 +43,7 @@ export const StarWrapper = styled.div`
 `;
 
 export const StarText = styled.span`
+    text-align: center;
     font-weight: 600;
     font-size: 18px;
 
