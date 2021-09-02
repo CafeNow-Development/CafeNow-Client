@@ -51,7 +51,9 @@ const ReviewList: React.FC<ReviewListProps> = ({ reviewList, reviewStarCount, re
           {reviewStarCount.map((v, i) => (
             <S.ReviewGraphItemWrapper>
               <S.ReviewGraphItemTitleText>{5 - i}점</S.ReviewGraphItemTitleText>
-              <S.ReviewGraphItemBar />
+              <S.ReviewGraphItemBarWrapper>
+                <S.ReviewGraphItemBar count={v} length={reviewList.length} />
+              </S.ReviewGraphItemBarWrapper>
               <S.ReviewGraphItemCountText>{v}</S.ReviewGraphItemCountText>
             </S.ReviewGraphItemWrapper>
           ))}

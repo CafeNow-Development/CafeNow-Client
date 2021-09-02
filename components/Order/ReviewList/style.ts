@@ -63,10 +63,16 @@ export const ReviewGraphItemTitleText = styled.span`
     color: #000000;
 `;
 
-export const ReviewGraphItemBar = styled.div`
+export const ReviewGraphItemBarWrapper = styled.div`
     width: 170px;
-    padding : 2px 0;
     background: #C4C4C4;
+    border-radius: 10px;
+`;
+
+export const ReviewGraphItemBar = styled.div<{ count: number, length: number }>`
+    width: ${props => props.count / props.length * 100}%;
+    padding : 2px 0;
+    background-color: #FF8C00;
     border-radius: 10px;
 `;
 
