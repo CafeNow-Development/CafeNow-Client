@@ -3,3 +3,4 @@ export { default as SearchContainer } from "./SearchContainer"
 export { default as ResultContainer } from "./ResultContainer"
 export { default as StoreDetailContainer } from "./StoreDetailContainer"
 export { default as OrderContainer } from "./OrderContainer";
+export { default as MenuInfoContainer } from "./MenuInfoContainer"
